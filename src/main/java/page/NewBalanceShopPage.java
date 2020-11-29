@@ -8,6 +8,7 @@ import wait.WaitElementMethod;
 public abstract class NewBalanceShopPage {
 
     protected WebDriver driver;
+
     protected static final String HOMEPAGE_URL = "https://nbalance.by/";
     protected final long WAIT_TIME_SECONDS = 10;
 
@@ -20,6 +21,6 @@ public abstract class NewBalanceShopPage {
                 By.xpath("//input[@class = 'yith-s']"), WAIT_TIME_SECONDS);
         searchInputField.sendKeys(sneakersName);
         searchInputField.submit();
-        return  null;//
+        return  new SearchResultPage(driver, sneakersName);
     }
 }
