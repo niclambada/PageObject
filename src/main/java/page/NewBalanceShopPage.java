@@ -9,7 +9,7 @@ public abstract class NewBalanceShopPage {
 
     protected WebDriver driver;
     protected static final String HOME_URL = "https://nbalance.by/";
-    protected final long WAIT_TIME_SECONDS = 20;
+    protected final long WAIT_TIME_SECONDS = 10;
 
     public NewBalanceShopPage(WebDriver driver) {
         this.driver = driver;

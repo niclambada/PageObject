@@ -22,4 +22,10 @@ public class NewBalanceProductPage extends NewBalanceShopPage{
                 By.xpath("//h1[@class = 'product_title entry-title' and text() ='"+sneakersName+"']"), WAIT_TIME_SECONDS);
         return sneakers.getText();
     }
+
+    public String actualSizeSelected() {
+        WebElement actualSize = WaitElementMethod.waitForElementLocatedBy(driver,
+                By.xpath("//span[contains(@class, 'selected')]"), WAIT_TIME_SECONDS);
+        return actualSize.getText();
+    }
 }

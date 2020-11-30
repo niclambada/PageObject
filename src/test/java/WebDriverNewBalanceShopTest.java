@@ -21,12 +21,14 @@ public class WebDriverNewBalanceShopTest {
     public void shouldBeSelectedSneakersSizeTest() {
         driver.manage().deleteAllCookies();
         String sneakersName = "New Balance 574 Dark";
+        String selectedSize = "8.5";
         NewBalanceProductPage productPage = new NewBalanceHomePage(driver)
                 .openPage()
                 .searchForSneakersName(sneakersName)
                 .selectProductLink(sneakersName)
                 .selectSneakersSize();
-        Assert.assertTrue(productPage.getSneakersName(sneakersName).contains("New Balance 574 Dark"));
+        Assert.assertTrue(productPage.getSneakersName(sneakersName).contains(sneakersName));
+        Assert.assertTrue(productPage.actualSizeSelected().contains(selectedSize));
     }
     @AfterTest(alwaysRun = true)
     public void browserTearDown() {
