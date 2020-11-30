@@ -8,19 +8,18 @@ import wait.WaitElementMethod;
 public abstract class NewBalanceShopPage {
 
     protected WebDriver driver;
-
-    protected static final String HOMEPAGE_URL = "https://nbalance.by/";
-    protected final long WAIT_TIME_SECONDS = 10;
+    protected static final String HOME_URL = "https://nbalance.by/";
+    protected final long WAIT_TIME_SECONDS = 20;
 
     public NewBalanceShopPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public NewBalanceShopPage searchForSneakersName(String sneakersName) {
+    public NewBalanceResultsPage searchForSneakersName(String sneakersName) {
         WebElement searchInputField = WaitElementMethod.waitForElementLocatedBy(driver,
                 By.xpath("//input[@class = 'yith-s']"), WAIT_TIME_SECONDS);
         searchInputField.sendKeys(sneakersName);
         searchInputField.submit();
-        return  new SearchResultPage(driver, sneakersName);
+        return  new NewBalanceResultsPage(driver, sneakersName);
     }
 }
