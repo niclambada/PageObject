@@ -22,7 +22,7 @@ public class NewBalanceCartPage extends NewBalanceShopPage {
         if(sneakers.getText().trim().contains(sneakersName) && sneakers.getText().trim().contains(selectedSize)){
             return true;
         }
-            return false;
+        return false;
     }
 
     public int getCountOfSneakers() {
