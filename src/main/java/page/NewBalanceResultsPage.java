@@ -7,15 +7,15 @@ import wait.WaitElementMethod;
 
 public class NewBalanceResultsPage extends NewBalanceShopPage {
 
-    private String sneakersName;
+    private static final String PRODUCT_LINK = "//a[contains(@href, 'ml574nba-d-polubotinki') and h2[text() = '$']]";
+
     public NewBalanceResultsPage(WebDriver driver, String sneakersName) {
         super(driver);
-        this.sneakersName = sneakersName;
     }
 
     public NewBalanceProductPage selectProductLink(String name) {
         WebElement productInfoLink = WaitElementMethod.waitForElementLocatedBy(driver,
-                By.xpath("//a[contains(@class, 'woocommerce-LoopProduct-link') and h2[text() = '"+name+"']]"), WAIT_TIME_SECONDS);
+                By.xpath(PRODUCT_LINK.replace("$", name)), WAIT_TIME_SECONDS);
         productInfoLink.click();
         return  new NewBalanceProductPage(driver);
     }
