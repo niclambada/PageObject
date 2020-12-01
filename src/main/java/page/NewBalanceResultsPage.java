@@ -8,9 +8,11 @@ import wait.WaitElementMethod;
 public class NewBalanceResultsPage extends NewBalanceShopPage {
 
     private static final String PRODUCT_LINK = "//a[contains(@href, 'ml574nba-d-polubotinki') and h2[text() = '$']]";
+    private String sneakersName;
 
     public NewBalanceResultsPage(WebDriver driver, String sneakersName) {
         super(driver);
+        this.sneakersName = sneakersName;
     }
 
     public NewBalanceProductPage selectProductLink(String name) {
