@@ -22,4 +22,11 @@ public abstract class NewBalanceShopPage {
         searchInputField.submit();
         return  new NewBalanceResultsPage(driver, sneakersName);
     }
+
+    public NewBalanceCartPage openCart() {
+        WebElement cartButton = WaitElementMethod.waitForElementLocatedBy(driver,
+                By.xpath("//a[@class = 'wpmenucart-contents']"), WAIT_TIME_SECONDS);
+        cartButton.click();
+        return new NewBalanceCartPage(driver);
+    }
 }

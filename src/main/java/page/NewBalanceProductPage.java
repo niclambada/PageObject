@@ -28,4 +28,11 @@ public class NewBalanceProductPage extends NewBalanceShopPage{
                 By.xpath("//span[contains(@class, 'selected')]"), WAIT_TIME_SECONDS);
         return actualSize.getText();
     }
+
+    public NewBalanceProductPage addToCart() {
+        WebElement cartButton = WaitElementMethod.waitForElementLocatedBy(driver,
+                By.xpath("//button[contains(@class, 'add-btn')]"), WAIT_TIME_SECONDS);
+        cartButton.click();
+        return this;
+    }
 }
