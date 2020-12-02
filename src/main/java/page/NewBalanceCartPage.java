@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import wait.WaitElementMethod;
 
 public class NewBalanceCartPage extends NewBalanceShopPage {
+
     public NewBalanceCartPage(WebDriver driver) {
         super(driver);
     }

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import wait.WaitElementMethod;
 
 public class NewBalanceProductPage extends NewBalanceShopPage{
+
     public NewBalanceProductPage(WebDriver driver) {
         super(driver);
     }
